@@ -3,7 +3,12 @@
 @section('title', 'Grupos Econômicos')
 
 @section('content_header')
-    <h2>Perfil</h2>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Perfil</h1>
+            <p class="lead">Esta tela permite gerenciar seu cadastro.</p>
+        </div>
+    </div>
 @stop
 
 @section('content')
@@ -26,7 +31,7 @@
             </div>
         </div>
     </div>
-@stop 
+@stop
 
 
 @section('css')
