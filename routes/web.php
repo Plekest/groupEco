@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EconomicGroupsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProfileLogedController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,4 +21,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('economic_groups', EconomicGroupsController::class);
+
+Route::get('/profile_user', [ProfileLogedController::class, 'index'])->name('profile.index');
+Route::get('economic_groups', [EconomicGroupsController::class, 'index'])->name('economic_groups.index');
