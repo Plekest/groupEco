@@ -91,7 +91,7 @@
         </div>
 
         {{-- Register button --}}
-        <button type="submit" class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
+        <button type="submit" class="btn btn-block btn-success {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
             <span class="fas fa-user-plus"></span>
             {{ __('adminlte::adminlte.register') }}
         </button>
@@ -101,7 +101,7 @@
 
 @section('auth_footer')
     <p class="my-0">
-        <a href="{{ $login_url }}">
+        <a href="{{ $login_url }}" class="text-success">
             {{ __('adminlte::adminlte.i_already_have_a_membership') }}
         </a>
     </p>

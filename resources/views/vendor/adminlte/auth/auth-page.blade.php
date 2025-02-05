@@ -55,7 +55,7 @@
         </div>
 
         {{-- Card Box --}}
-        <div class="card {{ config('adminlte.classes_auth_card', 'card-outline card-primary') }}">
+        <div class="card card-outline card-success">
 
             {{-- Card Header --}}
             @hasSection('auth_header')
