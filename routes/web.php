@@ -5,8 +5,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileLogedController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('auth')->group(function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    });
 });
 
 Route::get('/dashboard', function () {
@@ -21,6 +23,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
-Route::get('/profile_user', [ProfileLogedController::class, 'index'])->name('profile.index');
-Route::get('economic_groups', [EconomicGroupsController::class, 'index'])->name('economic_groups.index');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile_user', [ProfileLogedController::class, 'index'])->name('profile.index');
+    Route::get('economic_groups', [EconomicGroupsController::class, 'index'])->name('economic_groups.index'); 
+});
