@@ -3,7 +3,7 @@
         <div class="container">
             <h1 class="display-4">Unidades</h1>
             <p class="lead">Esta tela permite gerenciar a criação e administração das unidades.</p>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#unitModal">
+            <button type="button" class="btn btn-success" wire:click="resetModal" data-toggle="modal" data-target="#unitModal">
                 <i class="fas fa-plus pr-2"></i>Nova Unidade
             </button>
         </div>
@@ -21,7 +21,7 @@
                     <form wire:submit.prevent="{{ $editMode ? 'updateUnit' : 'createUnit' }}">
                         <div class="form-group">
                             <label for="fantasy_name">Nome Fantasia</label>
-                            <input type="text" id="fantasy_name" class="form-control" wire:model="fantasy_name">
+                            <input type="text" id="fantasy_name" class="form-control" wire:model="fantasy_name" placeholder="Ex: Voch Tech">
                             @error('fantasy_name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -29,7 +29,7 @@
 
                         <div class="form-group">
                             <label for="company_name">Razão Social</label>
-                            <input type="text" id="company_name" class="form-control" wire:model="company_name">
+                            <input type="text" id="company_name" class="form-control" wire:model="company_name" placeholder="Ex: Voch Tecnologia e Sistemas de Informacao Ltda">
                             @error('company_name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -37,7 +37,7 @@
 
                         <div class="form-group">
                             <label for="cnpj">CNPJ</label>
-                            <input type="text" id="cnpj" class="form-control" wire:model="cnpj">
+                            <input type="text" id="cnpj" class="form-control" wire:model="cnpj" placeholder="Ex: 00.000.000/0000-00">
                             @error('cnpj')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -56,8 +56,9 @@
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-success">Salvar</button>
-                    </form>
+                        <button type="submit" class="btn btn-success">
+                            {{ $editMode ? 'Atualizar' : 'Criar' }}
+                        </button>                    </form>
                 </div>
             </div>
         </div>
