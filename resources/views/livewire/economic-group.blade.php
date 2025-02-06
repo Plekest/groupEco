@@ -27,8 +27,7 @@
 
                         <div class="form-group">
                             <label for="economicGroupName">Nome do Grupo</label>
-                            <input type="text" class="form-control" id="economicGroupName" wire:model="name"
-                                required>
+                            <input type="text" class="form-control" id="economicGroupName" wire:model="name" required placeholder="Ex: Group ECO">
                         </div>
 
                         <button type="submit" class="btn btn-success">

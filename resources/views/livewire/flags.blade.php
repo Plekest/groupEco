@@ -21,8 +21,8 @@
                 <div class="modal-body">
                     <form wire:submit.prevent="{{ $editMode ? 'updateFlag' : 'createFlag' }}">
                         <div class="form-group">
-                            <label for="name">Nome da Flag</label>
-                            <input type="text" id="name" class="form-control" wire:model="name">
+                            <label for="name">Nome da Bandeira</label>
+                            <input type="text" id="name" class="form-control" wire:model="name" placeholder="Ex: Voch">
                             @error('name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
