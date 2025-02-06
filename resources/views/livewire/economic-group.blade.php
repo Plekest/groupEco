@@ -11,7 +11,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="createEconomicGroup" tabindex="-1" aria-labelledby="createEconomicGroupLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="createEconomicGroupLabel">Criar Grupo Econômico</h5>
@@ -28,7 +28,7 @@
                             <input type="text" class="form-control" id="economicGroupName" wire:model="name" required>
                         </div>
                     
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-success">
                             {{ $editMode ? 'Atualizar' : 'Criar' }}
                         </button>
                     </form>

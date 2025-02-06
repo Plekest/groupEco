@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Bandeiras')
+@section('title', 'Unidades')
 
 @section('content')
 
-    @livewire('flags')
+    @livewire('units')
     @livewireScripts
 
 @stop

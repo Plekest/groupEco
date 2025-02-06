@@ -10,11 +10,12 @@ class Unit extends Model
         'fantasy_name',
         'company_name',
         'cnpj',
+        'flag_id',
     ];
 
     public function flag()
     {
-        return $this->belongsTo(Flag::class);
+        return $this->belongsTo(Flag::class, 'flag_id');
     }
 
     public function employees()
