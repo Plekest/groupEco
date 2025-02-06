@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('fantasy_name');
             $table->string('company_name');
             $table->string('cnpj');
-            $table->foreignId('flags_id')->constrained();
+            $table->foreignId('flags_id')->constrained('flags')->onDelete('cascade');
             $table->timestamps();
         });
     }

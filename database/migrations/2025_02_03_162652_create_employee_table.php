@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('cpf');
-            $table->foreignId('units_id')->constrained();
+            $table->foreignId('units_id')->constrained('units')->onDelete('cascade');
             $table->timestamps();
         });
     }
