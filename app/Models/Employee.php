@@ -10,10 +10,11 @@ class Employee extends Model
         'name',
         'email',
         'cpf',
+        'unit_id',
     ];
 
     public function unit()
     {
-        return $this->belongsTo(Unit::class);
+        return $this->belongsTo(Unit::class, 'unit_id');
     }
 }
