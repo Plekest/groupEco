@@ -3,7 +3,8 @@
         <div class="container">
             <h1 class="display-4">Bandeiras</h1>
             <p class="lead">Esta tela permite gerenciar a criação e administração das bandeiras.</p>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#flagModal">
+            <button type="button" class="btn btn-success" wire:click="resetModal" data-toggle="modal"
+                data-target="#flagModal">
                 <i class="fas fa-plus pr-2"></i>Nova Bandeira
             </button>
         </div>
@@ -40,7 +41,9 @@
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-success">Salvar</button>
+                        <button type="submit" class="btn btn-success">
+                            {{ $editMode ? 'Atualizar' : 'Criar' }}
+                        </button>
                     </form>
                 </div>
             </div>
