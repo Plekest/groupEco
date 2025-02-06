@@ -48,7 +48,7 @@ class Flags extends Component
     public function createFlag()
     {
         $this->validate([
-            'name' => 'required|string|max:100',
+            'name' => 'required|string|max:100|unique:flags,name',
             'economic_group_id' => 'required|exists:economic_groups,id',
         ]);
 
@@ -98,7 +98,7 @@ class Flags extends Component
     public function updateFlag()
     {
         $this->validate([
-            'name' => 'required|string|max:100',
+            'name' => 'required|string|max:100|unique:flags,name,' . $this->flagId,
             'economic_group_id' => 'required|exists:economic_groups,id',
         ]);
     

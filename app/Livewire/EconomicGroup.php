@@ -43,7 +43,7 @@ class EconomicGroup extends Component
     public function createEconomicGroup()
     {
         $this->validate([
-            'name' => 'required|string|max:100',
+            'name' => 'required|string|max:100|unique:economic_groups,name',
         ]);
 
         ModelsEconomicGroup::create(['name' => $this->name]);
@@ -89,7 +89,7 @@ class EconomicGroup extends Component
     public function updateEconomicGroup()
     {
         $this->validate([
-            'name' => 'required|string|max:100',
+            'name' => 'required|string|max:100|unique:economic_groups,name,' . $this->economicGroupId,
         ]);
 
         $economicGroup = ModelsEconomicGroup::find($this->economicGroupId);
