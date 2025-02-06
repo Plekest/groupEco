@@ -3,7 +3,7 @@
         <div class="container">
             <h1 class="display-4">Funcionários</h1>
             <p class="lead">Esta tela permite gerenciar a criação e administração dos funcionários.</p>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#employeeModal">
+            <button type="button" class="btn btn-success" data-toggle="modal" wire:click="resetModal" data-target="#employeeModal">
                 <i class="fas fa-plus pr-2"></i>Novo Funcionário
             </button>
         </div>
@@ -56,7 +56,9 @@
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-success">Salvar</button>
+                        <button type="submit" class="btn btn-success">
+                            {{ $editMode ? 'Atualizar' : 'Criar' }}
+                        </button>
                     </form>
                 </div>
             </div>
