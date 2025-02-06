@@ -8,6 +8,7 @@ class Flag extends Model
 {
     protected $fillable = [
         'name',
+        'economic_group_id',
     ];
 
     public function economicGroup()

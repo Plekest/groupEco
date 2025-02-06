@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('flags', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('economic_groups_id')->constrained('economic_groups')->onDelete('cascade');
+            $table->foreignId('economic_group_id')->constrained('economic_groups')->onDelete('cascade');
             $table->timestamps();
         });
     }
