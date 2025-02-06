@@ -3,7 +3,7 @@
         <div class="container">
             <h1 class="display-4">Grupos Econômicos</h1>
             <p class="lead">Esta tela permite gerenciar a criação e administração de Grupos Econômicos.</p>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createEconomicGroup">
+            <button type="button" class="btn btn-success" data-toggle="modal" wire:click="resetModal" data-target="#createEconomicGroup">
                 <i class="fas fa-plus pr-2"></i>Novo Grupo Econômico
             </button>
         </div>
